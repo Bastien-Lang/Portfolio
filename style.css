@@ -599,6 +599,10 @@ textarea::-webkit-scrollbar {
     margin: 0;
   }
 
+  #contact{
+    height: 60vh;
+  }
+
   #contact > div{
     margin: 0;
     align-items: center;
@@ -820,6 +824,27 @@ textarea::-webkit-scrollbar {
     padding: 0;
     justify-content: center;
     align-items: center;
+  }
+
+  #contact-form{
+    width: 95%;
+  }
+  #contact-form form{
+    height: 90%;
+  }
+
+  #contact-form label{
+    font-size: 16px;
+  }
+  .fields input, .fields textarea, #names input{
+    border-radius: 25px;
+  }
+  #names{
+    flex-direction: column;
+    align-self: start;
+  }
+  #lastName, #firstName{
+    padding: 0;
   }
 }
 

@@ -212,7 +212,19 @@ let weackers = {
   "descEN":"Student project in pairs: shoe sales website"
 };
 
-let cardsUrl = [budget, weackers];
+let mirror = {
+  "url":"mirror", 
+  "desc":"Projet étudiant : Affiche pour le Musée d'Art Moderne de Paris",
+  "descEN":"Student project : Poster for the Musée d'Art Moderne de Paris"
+};
+
+let hanzzimmer = {
+  "url":"hanzzimmer", 
+  "desc":"Projet étudiant : Première de couverture pour Hanz Zimmer",
+  "descEN":"Student project : Cover for Hanz Zimmer"
+};
+
+let cardsUrl = [budget, weackers, mirror, hanzzimmer];
 let cards = document.querySelectorAll(".card");
 let cardsBack = document.querySelectorAll(".card-back span");
 
@@ -298,6 +310,5 @@ updateCardDescriptions(true);
 changeCookie()
 window.addEventListener("resize", setupScrollBehavior);
 setupScrollBehavior();
-
 
 

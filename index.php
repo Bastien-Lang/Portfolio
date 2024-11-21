@@ -96,7 +96,7 @@
         <div class="cards-container">
         <span class="subtitles">Websites</span>
         <div class="cards">
-          <a class="card" href="budget_app/index.php">
+          <a class="card" href="#">
             <div class="card-inner">
               <div class="card-front">
                 <span>Budget</span>
@@ -107,17 +107,7 @@
               </div>
             </div>
           </a>
-          <a class="card" href="budget_app/index.php">
-            <div class="card-inner">
-              <div class="card-front">
-                <span>Weackers</span>
-              </div>
-              <div class="card-back">
-                <span>Voir Détails</span>
-              </div>
-            </div>
-          </a>
-          <a class="card" href="budget_app/index.php">
+          <a class="card" href="#">
             <div class="card-inner">
               <div class="card-front">
                 <span>Weackers</span>
@@ -132,18 +122,29 @@
         <div class="cards-container">
           <span class="subtitles">Designs</span>
           <div class="cards">
-            <a class="card" href="budget_app/index.php">
+            <a class="card" href="#">
               <div class="card-inner">
                 <div class="card-front">
-                  <span>Budget</span>
-                  <span>App</span>
+                  <span></span>
+                  <span></span>
                 </div>
                 <div class="card-back">
                   <span>Voir Détails</span>
                 </div>
               </div>
             </a>
-          </div>
+            <a class="card" href="#">
+              <div class="card-inner">
+                <div class="card-front">
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="card-back">
+                  <span>Voir Détails</span>
+                </div>
+              </div>
+            </a>
+            </div>
         </div>
       </section>
 
