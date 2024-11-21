@@ -266,6 +266,38 @@ frenchFlags.forEach(flag => {
   flag.addEventListener("click", showFrench);
 });
 
+function setupScrollBehavior() {
+  const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+
+  if (isDesktop) {
+    console.log("Desktop detected: Activating segmented scroll");
+    document.body.style.scrollSnapType = "y mandatory";
+  } else {
+    console.log("Mobile detected: Resetting to default scroll");
+    leftNav.classList.add("hide")
+    rightNav.classList.add("hide")
+    document.body.style.scrollSnapType = "none";
+    document.body.style.overflow = "auto";
+  }
+}
+
+const burger = document.querySelector('#burger')
+const leftNav = document.querySelector('#left-nav')
+const rightNav = document.querySelector('#right-nav')
+const header = document.querySelector("header")
+burger.addEventListener("click", function(){
+  leftNav.classList.toggle("deroulee")
+  leftNav.classList.toggle("hide")
+  header.style.height = "auto"
+})
+
+
+// Initialisation
 // Initialisation par défaut des cartes en français
 updateCardDescriptions(true);
 changeCookie()
+window.addEventListener("resize", setupScrollBehavior);
+setupScrollBehavior();
+
+
+

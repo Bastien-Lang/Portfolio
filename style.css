@@ -6,13 +6,33 @@ html, body {
   font-family: 'Poppins';
 }
 
+/* Par défaut, le scroll est fluide et libre */
+
+html, body {
+  overflow-x: hidden; /* Empêche le scroll horizontal */
+  width: 100%; /* Assure que le contenu respecte la largeur de l'écran */
+}
+#bg-forme, #header, .cookie {
+  max-width: 100%;
+  left: 0; /* Évite les débordements latéraux */
+  right: 0; /* Évite les débordements */
+}
+#title-text {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%; /* Empêche le débordement */
+}
+
+body {
+  scroll-snap-type: none; /* Désactive le scroll segmenté */
+}
+
+
 html {
   scroll-behavior: smooth; /* Pour un défilement fluide */
 }
 
-* {
-  outline: 1px solid red;
-}
+
 
 body {
   scroll-snap-type: y mandatory; /* Snap sur l'axe vertical */
@@ -24,6 +44,8 @@ section {
 }
 #burger{
   display: none;
+  width: 55px;
+  margin: 0 20px 0 0;
 }
 #bg-forme{
   position: fixed;
@@ -593,10 +615,7 @@ textarea::-webkit-scrollbar {
   #about{
     flex-direction: column;
   }
-  #burger{
-    display: block;
-    cursor: pointer;
-  }
+
   #about>div{
     display: flex;
     flex-direction: column;
@@ -612,6 +631,12 @@ textarea::-webkit-scrollbar {
   }
   #skillsIcons{
     align-self: center;
+    max-width: 100%;
+  }
+
+  #about>svg{
+    max-width: 100%;
+    overflow: hidden;
   }
 
   .subtitles{
@@ -702,18 +727,24 @@ textarea::-webkit-scrollbar {
     font-size: 75px;
     margin-bottom: 1rem;
   }
-  #left-nav, #right-nav{
-    display: none;
+  .deroulee{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    width: auto;
   }
+  .hide{
+    display: none !important;
+  }
+
+
   #burgerDraw{
     cursor: pointer;
     display: block;
     background-color: #FDF7F0;
     height: 3px;
     width: 30px;
-    position: absolute;
-    top: 50%;
-    right: 70px;
     border-radius: 10px;
   }
 
@@ -725,7 +756,7 @@ textarea::-webkit-scrollbar {
     height: 3px;
     width: 30px;
     position: absolute;
-    top: 10px;
+    bottom: 20%;
     border-radius: 10px;
   }
 
@@ -737,10 +768,28 @@ textarea::-webkit-scrollbar {
     height: 3px;
     width: 30px;
     position: absolute;
-    top: -10px;
+    top: 20%;
     border-radius: 10px;
   }
 
+  header>nav{
+    height: 100%;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    padding: 0;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;  }
+
+  #left-nav{
+    margin-bottom: 2rem;
+    margin-top: 0;
+    width: 100%;
+  }
+  #left-nav a{
+    margin: 5px 0;
+    padding: 0 20px 0 0;
+    width: 100%;
+    text-align: end;
+  }
 }
 
 @media screen and (max-width:430px) {
@@ -759,4 +808,72 @@ textarea::-webkit-scrollbar {
   #projects .title{
     font-size: 50px;
   }
+  #contact > div > button{
+    align-self: flex-start;
+    margin-left: 15%;
+  }
+  .menu {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex !important;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* Activer le scroll segmenté uniquement sur desktop */
+
+
+@media (max-width: 767px) {
+  html, body {
+    scroll-behavior: auto !important; /* Comportement de scroll par défaut */
+    overflow: auto !important; /* Assure que le scroll est libre */
+  }
+
+  body {
+    scroll-snap-type: none !important; /* Désactive le scroll segmenté */
+  }
+
+  section {
+    scroll-snap-align: none !important;
+  }
+}
+
+
+.line {
+  fill: none;
+  stroke: #FDF7F0;
+  stroke-width: 6;
+  stroke-linecap: round; /* Arrondir les extrémités */
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.line1 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+.line2 {
+  stroke-dasharray: 60 60;
+  stroke-width: 6;
+}
+.line3 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+.opened .line1 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+.opened .line2 {
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+  stroke-width: 6;
+}
+.opened .line3 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
 }
