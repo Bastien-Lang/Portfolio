@@ -97,6 +97,7 @@
         <span class="subtitles">Websites</span>
         <div class="cards">
           <a class="card" href="#">
+          <div class="background"></div>
             <div class="card-inner">
               <div class="card-front">
                 <span>Budget</span>
@@ -108,9 +109,21 @@
             </div>
           </a>
           <a class="card" href="#">
+          <div class="background"></div>
             <div class="card-inner">
               <div class="card-front">
                 <span>Weackers</span>
+              </div>
+              <div class="card-back">
+                <span>Voir Détails</span>
+              </div>
+            </div>
+          </a>
+          <a class="card" href="#">
+          <div class="background"></div>
+            <div class="card-inner">
+              <div class="card-front">
+                <span>UPFEST</span>
               </div>
               <div class="card-back">
                 <span>Voir Détails</span>
@@ -123,10 +136,9 @@
           <span class="subtitles">Designs</span>
           <div class="cards">
             <a class="card" href="#">
+              <div class="background"></div>
               <div class="card-inner">
                 <div class="card-front">
-                  <span></span>
-                  <span></span>
                 </div>
                 <div class="card-back">
                   <span>Voir Détails</span>
@@ -134,10 +146,9 @@
               </div>
             </a>
             <a class="card" href="#">
+            <div class="background"></div>
               <div class="card-inner">
                 <div class="card-front">
-                  <span></span>
-                  <span></span>
                 </div>
                 <div class="card-back">
                   <span>Voir Détails</span>

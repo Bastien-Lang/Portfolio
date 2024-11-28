@@ -204,33 +204,45 @@ let frenchFlags = document.querySelectorAll(".french-flag");
 let budget = {
   "url":"budget", 
   "desc":'Projet personnel : site  type "bancaire" de gestion de dépenses',
-  "descEN" : 'Personal project: "banking"-style expense management site'
+  "descEN" : 'Personal project: "banking"-style expense management site',
+  "blur" : true
 };
 let weackers = {
   "url":"weackers", 
   "desc":"Projet étudiant en binôme : site de vente de chaussures",
-  "descEN":"Student project in pairs: shoe sales website"
+  "descEN":"Student project in pairs: shoe sales website",
+  "blur" : true
+};
+
+let upfest = {
+  "url":"upfest", 
+  "desc":"Projet étudiant : Création et communication autour d'un festival",
+  "descEN":"Student project : Creation and communication around a festival",
+  "blur" : true
 };
 
 let mirror = {
   "url":"mirror", 
   "desc":"Projet étudiant : Affiche pour le Musée d'Art Moderne de Paris",
-  "descEN":"Student project : Poster for the Musée d'Art Moderne de Paris"
+  "descEN":"Student project : Poster for the Musée d'Art Moderne de Paris",
+  "blur" : false
 };
 
 let hanzzimmer = {
   "url":"hanzzimmer", 
   "desc":"Projet étudiant : Première de couverture pour Hanz Zimmer",
-  "descEN":"Student project : Cover for Hanz Zimmer"
+  "descEN":"Student project : Cover for Hanz Zimmer",
+  "blur" : false
 };
 
-let cardsUrl = [budget, weackers, mirror, hanzzimmer];
-let cards = document.querySelectorAll(".card");
+let cardsUrl = [budget, weackers, upfest, mirror, hanzzimmer];
+let cards = document.querySelectorAll(".background");
 let cardsBack = document.querySelectorAll(".card-back span");
 
 // Fonction pour mettre à jour les descriptions des cartes en fonction de la langue
 function updateCardDescriptions(isEnglish) {
   for (let i = 0; i < cardsUrl.length; i++) {
+    if(cardsUrl[i].blur){cards[i].style.filter= "blur(4px)"}
     cardsBack[i].textContent = isEnglish ? cardsUrl[i].descEN : cardsUrl[i].desc;
     cards[i].style.backgroundImage = `url(${cardsUrl[i].url}.png)`
   }

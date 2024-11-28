@@ -23,14 +23,6 @@ html, body {
   max-width: 100%; /* Empêche le débordement */
 }
 
-body {
-  /**scroll-snap-type: none; /* Désactive le scroll segmenté */
-}
-
-
-html {
-  /**scroll-behavior: smooth; /* Pour un défilement fluide */
-}
 
 
 section {
@@ -292,6 +284,15 @@ header>nav a, header>nav button{
   overflow: hidden;
 }
 
+.background{
+  text-decoration: none;
+  background-size: 145%;
+  position: absolute;
+  width: 300px;
+  height: 250px;
+  overflow: hidden;
+  background-position: center;
+}
 .card-inner {
   position: relative;
   width: 100%;
@@ -316,10 +317,17 @@ header>nav a, header>nav button{
   color: #FDF7F0;
   z-index: 1;
 }
+.card-front span{
+  background-color: #00000075;
+  padding: 10px;
+  border-radius: 10px;
+  width: 120%;
+  text-align: center;
+}
 
 .card-back {
-  background-color: #695853;
-  color: #FDF7F0;
+  background-color: #F7DDBF;
+  color: #263547;
   transform: translateX(100%); /* Cache la carte arrière hors de vue */
   z-index: 2;
 }
