@@ -283,7 +283,7 @@ function setupScrollBehavior() {
 
   if (isDesktop) {
     console.log("Desktop detected: Activating segmented scroll");
-    document.body.style.scrollSnapType = "y mandatory";
+   // document.body.style.scrollSnapType = "y mandatory";
   } else {
     console.log("Mobile detected: Resetting to default scroll");
     leftNav.classList.add("hide")
@@ -308,7 +308,5 @@ burger.addEventListener("click", function(){
 // Initialisation par défaut des cartes en français
 updateCardDescriptions(true);
 changeCookie()
-window.addEventListener("resize", setupScrollBehavior);
-setupScrollBehavior();
-
+setupScrollBehavior()
 

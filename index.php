@@ -211,39 +211,6 @@
         </div>
         <?php include("portrait.php");?>
       </section>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.3/smooth-scroll.polyfills.min.js"></script>
-
-      <script>
-  // Initialize smooth scroll for navbar links
-  var scroll = new SmoothScroll('.navbar a[href*="#"]', {
-    speed: 800,
-    speedAsDuration: true
-  });
-
-  // Scroll animation when using the mouse scroll
-  let isScrolling = false;
-  let lastScrollTime = 0;
-
-  window.addEventListener('wheel', (event) => {
-    const now = Date.now();
-    if (!isScrolling && now - lastScrollTime > 1000) {  // Délai minimum d'une seconde entre les scrolls
-      isScrolling = true;
-      lastScrollTime = now;
-      
-      let direction = event.deltaY > 0 ? 1 : -1; // Determine scroll direction
-      const sections = document.querySelectorAll('section');
-      let currentSection = Math.round(window.scrollY / window.innerHeight);
-      let nextSectionIndex = currentSection + direction;
-
-      if (nextSectionIndex >= 0 && nextSectionIndex < sections.length) {
-        const nextSection = sections[nextSectionIndex];
-        scroll.animateScroll(nextSection);
-      }
-
-      setTimeout(() => { isScrolling = false; }, 800); // Timeout pour éviter le scroll rapide
-    }
-  });
-</script>
 
       <script type="module" src="main.js"></script>
 </body>

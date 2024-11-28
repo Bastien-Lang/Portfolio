@@ -24,22 +24,17 @@ html, body {
 }
 
 body {
-  scroll-snap-type: none; /* Désactive le scroll segmenté */
+  /**scroll-snap-type: none; /* Désactive le scroll segmenté */
 }
 
 
 html {
-  scroll-behavior: smooth; /* Pour un défilement fluide */
+  /**scroll-behavior: smooth; /* Pour un défilement fluide */
 }
 
-
-
-body {
-  scroll-snap-type: y mandatory; /* Snap sur l'axe vertical */
-}
 
 section {
-  scroll-snap-align: start; /* Chaque section s'alignera au début */
+  /*scroll-snap-align: start; /* Chaque section s'alignera au début */
   height: 100vh; /* Chaque section fait 100% de la hauteur de la vue */
 }
 #burger{
@@ -583,16 +578,7 @@ textarea::-webkit-scrollbar {
 
 
 @media screen and (max-width:768px) {
-  html {
-    scroll-behavior: auto; 
-  }
-  body {
-    scroll-snap-type: none; 
-  }
-  
-  section {
-    scroll-snap-align: none;
-  }
+
 
   #projects{
     align-items: center;
@@ -853,16 +839,7 @@ textarea::-webkit-scrollbar {
 
 @media (max-width: 767px) {
   html, body {
-    scroll-behavior: auto !important; /* Comportement de scroll par défaut */
     overflow: auto !important; /* Assure que le scroll est libre */
-  }
-
-  body {
-    scroll-snap-type: none !important; /* Désactive le scroll segmenté */
-  }
-
-  section {
-    scroll-snap-align: none !important;
   }
 }
 
