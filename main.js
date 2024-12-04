@@ -223,21 +223,32 @@ let upfest = {
 
 let mirror = {
   "url":"mirror", 
+  "titre" :"Mirror",
   "desc":"Projet étudiant : Affiche pour le Musée d'Art Moderne de Paris",
   "descEN":"Student project : Poster for the Musée d'Art Moderne de Paris",
-  "blur" : false
+  "descDetaillee" : "Projet étudiant : Première de couverture pour Hanz Zimmer. Logiciels utilisés : Photoshop",
+  "blur" : false,
+  "scale" : true
 };
 
 let hanzzimmer = {
   "url":"hanzzimmer", 
+  "titre" :"Hanz Zimmer",
   "desc":"Projet étudiant : Première de couverture pour Hanz Zimmer",
   "descEN":"Student project : Cover for Hanz Zimmer",
-  "blur" : false
+  "descDetaillee" : "Projet étudiant : Affiche pour le Musée d'Art Moderne de Paris. Logiciels utilisés : Photoshop",
+  "blur" : false,
+  "scale" : true
 };
 
 let cardsUrl = [budget, weackers, upfest, mirror, hanzzimmer];
 let cards = document.querySelectorAll(".background");
+let card = document.querySelectorAll(".card");
 let cardsBack = document.querySelectorAll(".card-back span");
+const overlay = document.querySelector('#overlay')
+const overlayImg = document.querySelector("#overlay img")
+const overlayH2 = document.querySelector('#overlay div h2')
+const overlaySpan = document.querySelector("#overlay div span")
 
 // Fonction pour mettre à jour les descriptions des cartes en fonction de la langue
 function updateCardDescriptions(isEnglish) {
@@ -247,6 +258,26 @@ function updateCardDescriptions(isEnglish) {
     cards[i].style.backgroundImage = `url(${cardsUrl[i].url}.png)`
   }
 }
+  for (let i = 0; i < cardsUrl.length; i++) {
+    if(cardsUrl[i].scale){
+        card[i].addEventListener("click", function(){
+          console.log(cards[i])
+            overlay.classList.add("show")
+            overlay.classList.remove("hide")
+            overlayImg.src = `${cardsUrl[i].url}.png`
+            overlayH2.textContent = cardsUrl[i].titre
+            overlaySpan.textContent = cardsUrl[i].descDetaillee
+            overlay.addEventListener("click", function(){
+                overlayImg.src = ""
+                overlayH2.textContent = ""
+                overlaySpan.textContent = ""
+                overlay.classList.add("hide")
+                overlay.classList.remove("show")
+            })
+        });
+    }
+    
+    }
 
 // Fonction pour afficher la version anglaise
 function showEnglish() {
@@ -314,6 +345,29 @@ burger.addEventListener("click", function(){
   leftNav.classList.toggle("hide")
   header.style.height = "auto"
 })
+
+
+// Get the button:
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+} 
+
+
 
 
 // Initialisation

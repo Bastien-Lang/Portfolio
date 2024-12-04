@@ -5,7 +5,91 @@ html, body {
   background-color: #FDF7F0;
   font-family: 'Poppins';
 }
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: red; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
 
+#myBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
+.hide{
+  display: none !important;
+}
+
+.show{
+  display: block !important;
+}
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+#overlay button>i{
+  background: none;
+  border: none;
+  font-size: 45px;
+  transition: color 0.4s ease, transform 0.3s ease;
+  cursor: pointer;
+  color: #FDF7F0;
+}
+
+
+#overlay button>i:hover{
+  transition: 0.4s;
+  color: #f00;
+  transform: rotate(90deg);
+}
+
+#overlay button{
+  position: absolute;
+  top: 2%;
+  background: none;
+  cursor: pointer;
+  border: none;
+  right: 5%;
+
+}
+#overlay img {
+  max-width: 90%;
+  max-height: 65%;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform:translate(-50%,-50%)
+}
+
+#overlay>div{
+  width: 100%;
+  text-align: center;
+  z-index: 1000;
+  background-color: #695853;
+  color: #FDF7F0;
+  position: absolute;
+  bottom: 0;
+}
 /* Par défaut, le scroll est fluide et libre */
 
 html, body {
@@ -349,7 +433,7 @@ header>nav a, header>nav button{
 
 /*contact*/
 #contact{
-  height: 100vh;
+  height: 70vh;
   position: relative;
   display: flex;
   justify-content: center;
@@ -574,8 +658,29 @@ textarea::-webkit-scrollbar {
 
 #about>div{
   flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
 }
-
+#about>div>a{
+  cursor: pointer;
+  border-radius: 20px;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  border: none;
+  background-color: #695853;
+  padding: 1rem 4rem;
+  text-align: center;
+  max-width: 150px;
+  max-height: 50px;
+}
+#about>div>a>button{
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: #FDF7F0;
+  font-weight: 900;
+  font-size: 24px;
+}
 #about>div>div{
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -587,7 +692,14 @@ textarea::-webkit-scrollbar {
 
 @media screen and (max-width:768px) {
 
-
+  #about>div>a{
+    margin-top: 1rem;
+    align-self: center;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  }
+  #about>div>a>button{
+    font-size: 16px;
+  }
   #projects{
     align-items: center;
     margin: 0;
@@ -611,7 +723,8 @@ textarea::-webkit-scrollbar {
   }
 
   #about{
-    flex-direction: column;
+    flex-direction: column-reverse;
+    height: auto;
   }
 
   #about>div{
@@ -716,6 +829,7 @@ textarea::-webkit-scrollbar {
   }
   section, #projects{
     height: auto;
+    margin-top: 3rem;
   }
   #cookie-text{
     font-size: 20px;
@@ -788,11 +902,31 @@ textarea::-webkit-scrollbar {
     width: 100%;
     text-align: end;
   }
+  .menu {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex !important;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  #home{
+    height: 90dvh;
+  } 
+  #overlay div{
+    padding-bottom: 1rem;
+  }
 }
 
 @media screen and (max-width:430px) {
+
   #contact > div > span, #about .title{
     font-size: 50px;
+    align-self: flex-start;
+  }
+  #contact .title{
+    margin-left: 15%;
   }
   #english, #french{
     font-size: 12px;
@@ -810,14 +944,12 @@ textarea::-webkit-scrollbar {
     align-self: flex-start;
     margin-left: 15%;
   }
-  .menu {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    display: flex !important;
-    padding: 0;
-    justify-content: center;
-    align-items: center;
+  .cards{
+    grid-template-columns: auto;
+  }
+  .card{
+    width: 250px !important;
+    height: 200px !important;
   }
 
   #contact-form{

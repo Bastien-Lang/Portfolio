@@ -48,6 +48,7 @@
         </div>
       </nav>
     </header>
+    
       <section id="home">
       <?php include("bg-forme.php");?>
 
@@ -81,6 +82,40 @@
             </svg>
           </a>
         </div>
+      </section>
+      <section id="about">
+        <div>
+          <span class="title hidden" id="à-propos">À PROPOS</span>
+          <span class="title" id="about-me">ABOUT ME</span>
+          <div>
+            <button class="showFlag english-flag">
+            <?php include("english-flag.php");?>
+            </button>
+            <button class="french-flag">
+              <?php include("french-flag.php");?>
+            </button>
+          </div>
+          <div>
+            <span id="french" class="hidden">
+              Actuellement étudiant de <b>2ème année</b> en <b>MMI</b> (Métiers du Multimédia et de l'Internet) à l'IUT de Lens, je suis passionné par les nouvelles technologies et le développement d'applications web. Je maitrise le <b>HTML</b>, <b>CSS</b>, <b>JavaScript</b>, ainsi que des frameworks tel que <b>Laravel</b>. J'ai également travaillé avec des langages back-end comme <b>PHP</b> ou <b>Node.js</b> et je suis à l'aise avec la gestion de bases de données en <b>MySQL</b>.
+            </span>
+            <span id="english">
+              Currently a <b>2nd year</b> student in <b>MMI</b> (Multimedia and Internet Trades) at the IUT of Lens, I am passionate about new technologies and web application development. I am proficient in <b>HTML</b>, <b>CSS</b>, <b>JavaScript</b>, as well as frameworks such as <b>Laravel</b>. I have also worked with back-end languages like <b>PHP</b> or <b>Node.js</b> and I am comfortable with managing databases in <b>MySQL</b>.
+            </span>
+          </div>
+          <div>
+            <span id="competences" class="hidden">Compétences</span>
+            <span id="skills">Skills</span>
+          </div>
+
+          <?php include('skills-icons.php');?>
+          <a href="CV-Bastien-Lang.pdf" download="Bastien_Lang_CV">
+              <button aria-label="Download my CV"><b>My CV</b></button>
+          </a>
+        </div>
+        <?php include("portrait.php");?>
+
+
       </section>
       
       <section id="projects">
@@ -135,7 +170,7 @@
         <div class="cards-container">
           <span class="subtitles">Designs</span>
           <div class="cards">
-            <a class="card" href="#">
+            <a class="card">
               <div class="background"></div>
               <div class="card-inner">
                 <div class="card-front">
@@ -145,7 +180,7 @@
                 </div>
               </div>
             </a>
-            <a class="card" href="#">
+            <a class="card">
             <div class="background"></div>
               <div class="card-inner">
                 <div class="card-front">
@@ -155,6 +190,17 @@
                 </div>
               </div>
             </a>
+            </div>
+        </div>
+        <div id="overlay" class="hide">
+            <button aria-label="Fermer l'image">
+              <i class='bx bx-x-circle'></i>
+            </button>
+            <img src="" alt="">
+            <div>
+
+              <h2></h2>
+              <span></span>
             </div>
         </div>
       </section>
@@ -192,37 +238,8 @@
           <input type="submit" name="submit" value="Submit" id="submit">
         </form>
       </div>
-
-      <section id="about">
-        <div>
-          <span class="title hidden" id="à-propos">À PROPOS</span>
-          <span class="title" id="about-me">ABOUT ME</span>
-          <div>
-            <button class="showFlag english-flag">
-            <?php include("english-flag.php");?>
-            </button>
-            <button class="french-flag">
-              <?php include("french-flag.php");?>
-            </button>
-          </div>
-          <div>
-            <span id="french" class="hidden">
-              Actuellement étudiant de <b>2ème année</b> en <b>MMI</b> (Métiers du Multimédia et de l'Internet) à l'IUT de Lens, je suis passionné par les nouvelles technologies et le développement d'applications web. Je maitrise le <b>HTML</b>, <b>CSS</b>, <b>JavaScript</b>, ainsi que des frameworks tel que <b>Laravel</b>. J'ai également travaillé avec des langages back-end comme <b>PHP</b> ou <b>Node.js</b> et je suis à l'aise avec la gestion de bases de données en <b>MySQL</b>.
-            </span>
-            <span id="english">
-              Currently a <b>2nd year</b> student in <b>MMI</b> (Multimedia and Internet Trades) at the IUT of Lens, I am passionate about new technologies and web application development. I am proficient in <b>HTML</b>, <b>CSS</b>, <b>JavaScript</b>, as well as frameworks such as <b>Laravel</b>. I have also worked with back-end languages like <b>PHP</b> or <b>Node.js</b> and I am comfortable with managing databases in <b>MySQL</b>.
-            </span>
-          </div>
-          <div>
-            <span id="competences" class="hidden">Compétences</span>
-            <span id="skills">Skills</span>
-          </div>
-
-          <?php include('skills-icons.php');?>
-        </div>
-        <?php include("portrait.php");?>
-      </section>
-
+      
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> 
       <script type="module" src="main.js"></script>
 </body>
 </html>
