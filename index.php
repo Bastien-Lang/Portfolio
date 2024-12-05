@@ -248,7 +248,7 @@
         </form>
       </div>
       
-      <button id="myBtn" title="Go to top">Top</button> 
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
       <script type="module" src="main.js"></script>
 </body>
 </html>

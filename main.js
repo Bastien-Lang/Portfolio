@@ -19,17 +19,20 @@
 
 
 
-  //si pas cliquer les cookies pendant 2 sec le compte des cookies descend
   let cookieClicker = document.querySelector("#cookieClicker");
   let cookieCount = document.querySelector("#cookie-count b");
   let cookiePlural = document.querySelector("#cookie-plural");
-  let count = 1;
+  let cookieImg = document.getElementById("imgCookie");
   
-  cookieClicker.addEventListener("click", function() {
-    cookieCount.textContent = count++;
+  let count = 0;
+  let compteur1 = 0;
+  let compteur2 = 0;
+  let cookieArray = ["cookie", "cookie 1", "cookie 2", "cookie 3", "cookie 4", "cookie 5", "cookie 6"];
   
-    afficherCookie()
-    changeCookie()
+  // Fonction d'animation shake et mise à jour des cookies
+  cookieClicker.addEventListener("click", () => {
+    count++;
+    cookieCount.textContent = count;
   
     // Gestion du singulier/pluriel pour "cookie"
     if (count === 1) {
@@ -46,55 +49,46 @@
       cookiePlural.textContent = "omega cookieeees";
     } else if (count < 150) {
       cookiePlural.textContent = "AHHHHHHHHHHH";
-    } else if (count == 151) {
-      cookieRain();
-    } else if (count > 151 && count < 300) {
+    } else if (count >= 150) {
       cookiePlural.textContent = "AHAHAHA COOKIEE";
-    } else if (count >= 300) {
-      cookieRain();
     }
+    if (count >= 150 && count % 15 === 0) {
+      cookieRain(); // Appelle la fonction cookieRain à 150 et tous les 15 clics suivants
+    }
+
+    // Change l'image du cookie
+    changeCookie();
   
-    // Calcul de la durée de l'animation (vitesse du tremblement)
-    let animationDuration = Math.max(0.1, 1 - (count - 15) * 0.05);
-    cookieClicker.style.animationDuration = `${animationDuration}s`;
-  
-    // Ajuste l'amplitude du tremblement (plus fort avec plus de cookies)
-    let shakeDistance = Math.min(30, (count - 15) * 2); // Maximum 30px de tremblement
-    cookieClicker.style.setProperty('--shake-distance', `${shakeDistance}px`);
-  
-    // Si l'amplitude est maximale, ajoute un léger mouvement vertical
-    let shakeVertical = shakeDistance >= 30 ? '5px' : '0px';
-    cookieClicker.style.setProperty('--shake-vertical', shakeVertical);
-  
-    // Redémarre l'animation de la div entière avec l'effet de résonance
-    cookieClicker.classList.remove('shake-resonate');
-    void cookieClicker.offsetWidth; // Reflow pour réinitialiser l'animation
-    cookieClicker.classList.add('shake-resonate');
-  
-    // Retire la classe après la durée totale de l'animation pour la div entière
+    // Ajoute l'animation de tremblement
+    cookieImg.classList.add("active");
     setTimeout(() => {
-      cookieClicker.classList.remove('shake-resonate');
-    }, animationDuration * 1000 * 4); // 4 fois la durée de l'animation
+      cookieImg.classList.remove("active");
+    }, 700);
+  
+    // Ajoute un effet "pop" au clic
+    let popEffect = document.createElement("div");
+    popEffect.classList.add("cookie-effect");
+    popEffect.textContent = `+${count}`;
+    popEffect.style.left = `${Math.random() * 100}px`;
+    popEffect.style.top = `${Math.random() * 50}px`;
+    cookieClicker.appendChild(popEffect);
+  
+    setTimeout(() => {
+      popEffect.remove();
+    }, 600);
   });
   
-
-
-
-
-
-let compteur1 = 0
-let compteur2 = 0
-let cookieArray = ['cookie', 'cookie 1','cookie 2', 'cookie 3','cookie 4', 'cookie 5', 'cookie 6']
-let cookieImg = document.getElementById("imgCookie")
-function changeCookie(){
-  cookieImg.src = `${cookieArray[compteur1]}.svg`
-  if(compteur1>=cookieArray.length-1){
-    compteur1 = cookieArray.length-1
-  }else if(compteur2 %30 == 0){
-    compteur1++
+  // Fonction pour changer l'image
+  function changeCookie() {
+    cookieImg.src = `${cookieArray[compteur1]}.svg`;
+    if (compteur1 >= cookieArray.length - 1) {
+      compteur1 = cookieArray.length - 1;
+    } else if (compteur2 % 30 == 0) {
+      compteur1++;
+    }
+    compteur2++;
   }
-  compteur2++
-}
+  
 
 
 
@@ -326,21 +320,6 @@ frenchFlags.forEach(flag => {
   flag.addEventListener("click", showFrench);
 });
 
-function setupScrollBehavior() {
-  const isDesktop = window.matchMedia("(min-width: 768px)").matches;
-
-  if (isDesktop) {
-    console.log("Desktop detected: Activating segmented scroll");
-   // document.body.style.scrollSnapType = "y mandatory";
-  } else {
-    console.log("Mobile detected: Resetting to default scroll");
-    leftNav.classList.add("hide")
-    rightNav.classList.add("hide")
-    document.body.style.scrollSnapType = "none";
-    document.body.style.overflow = "auto";
-  }
-}
-
 const burger = document.querySelector('#burger')
 const leftNav = document.querySelector('#left-nav')
 const rightNav = document.querySelector('#right-nav')
@@ -352,9 +331,9 @@ burger.addEventListener("click", function(){
 })
 
 
-// Get the button:
+// Get the button
 let mybutton = document.getElementById("myBtn");
-
+console.log(window.onscroll)
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 
@@ -365,20 +344,16 @@ function scrollFunction() {
     mybutton.style.display = "none";
   }
 }
+
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-} 
-
-mybutton.addEventListener("click", topFunction)
-
-
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0
+}
 
 
 // Initialisation
 // Initialisation par défaut des cartes en français
 updateCardDescriptions(true);
 changeCookie()
-setupScrollBehavior()
 
