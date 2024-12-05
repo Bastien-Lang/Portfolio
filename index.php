@@ -190,6 +190,16 @@
                 </div>
               </div>
             </a>
+            <a class="card">
+            <div class="background"></div>
+              <div class="card-inner">
+                <div class="card-front">
+                </div>
+                <div class="card-back">
+                  <span>Voir Détails</span>
+                </div>
+              </div>
+            </a>
             </div>
         </div>
         <div id="overlay" class="hide">
@@ -198,7 +208,6 @@
             </button>
             <img src="" alt="">
             <div>
-
               <h2></h2>
               <span></span>
             </div>
@@ -239,7 +248,7 @@
         </form>
       </div>
       
-      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> 
+      <button id="myBtn" title="Go to top">Top</button> 
       <script type="module" src="main.js"></script>
 </body>
 </html>

@@ -490,7 +490,8 @@ header>nav a, header>nav button{
 .fields{
   display: flex;
   flex-direction: column;
-  width: 100%;
+  align-self: center;
+  width: 80%;
 }
 #closeForm{
   width: 100vw;
@@ -504,12 +505,15 @@ header>nav a, header>nav button{
 
 #names{
   display: flex;
+  align-self: flex-start;
+  width: 80%;
   align-self: center;
 }
 
 #names div{
   display: flex;
   flex-direction: column;
+  flex-basis: 50%;
 }
 
 #names input{
@@ -589,8 +593,8 @@ textarea::-webkit-scrollbar {
 	cursor: pointer;
   color: #263547;
   position: absolute;
-  top: 8%;
-  right: 7%;
+  top: 4%;
+  right: 6%;
 }
 
 #close>i:hover {
@@ -685,7 +689,9 @@ textarea::-webkit-scrollbar {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-
+#overlay div{
+  padding-bottom: 2rem;
+}
 .showFlag{
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;}
 
@@ -914,11 +920,23 @@ textarea::-webkit-scrollbar {
   #home{
     height: 90dvh;
   } 
-  #overlay div{
-    padding-bottom: 1rem;
+  #contact-form{
+    width: 95%;
+  }
+  #contact-form form{
+    height: 90%;
+  }
+
+}
+@media screen and (max-width:1300px) {
+  #names{
+    flex-direction: column;
+    align-self: center;
+  }
+  #names>div{
+    padding: 0;
   }
 }
-
 @media screen and (max-width:430px) {
 
   #contact > div > span, #about .title{
@@ -952,22 +970,13 @@ textarea::-webkit-scrollbar {
     height: 200px !important;
   }
 
-  #contact-form{
-    width: 95%;
-  }
-  #contact-form form{
-    height: 90%;
-  }
+
 
   #contact-form label{
     font-size: 16px;
   }
   .fields input, .fields textarea, #names input{
     border-radius: 25px;
-  }
-  #names{
-    flex-direction: column;
-    align-self: start;
   }
   #lastName, #firstName{
     padding: 0;

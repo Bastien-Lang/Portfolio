@@ -226,8 +226,7 @@ let mirror = {
   "titre" :"Mirror",
   "desc":"Projet étudiant : Affiche pour le Musée d'Art Moderne de Paris",
   "descEN":"Student project : Poster for the Musée d'Art Moderne de Paris",
-  "descDetaillee" : "Projet étudiant : Première de couverture pour Hanz Zimmer. Logiciels utilisés : Photoshop",
-  "blur" : false,
+  "descDetaillee" : "Student project: Poster for the Musée d'Art Moderne de Paris. Software used: Photoshop",
   "scale" : true
 };
 
@@ -236,12 +235,19 @@ let hanzzimmer = {
   "titre" :"Hanz Zimmer",
   "desc":"Projet étudiant : Première de couverture pour Hanz Zimmer",
   "descEN":"Student project : Cover for Hanz Zimmer",
-  "descDetaillee" : "Projet étudiant : Affiche pour le Musée d'Art Moderne de Paris. Logiciels utilisés : Photoshop",
-  "blur" : false,
+  "descDetaillee" : "Student project: Cover Premiere for Hanz Zimmer. Software used: Photoshop",
+  "scale" : true
+};
+let saulbass = {
+  "url":"Saul_bass", 
+  "titre" :"Mystère à l'iut",
+  "desc":"Projet étudiant : Affiche / photos dans le style Saul Bass",
+  "descEN":"Student project: Poster/ photos in the style of Saul Bass",
+  "descDetaillee" : "Student project: Poster/ photos in the style of Saul Bass. Software used : Photoshop, photos taken by ourselves",
   "scale" : true
 };
 
-let cardsUrl = [budget, weackers, upfest, mirror, hanzzimmer];
+let cardsUrl = [budget, weackers, upfest, mirror, hanzzimmer, saulbass];
 let cards = document.querySelectorAll(".background");
 let card = document.querySelectorAll(".card");
 let cardsBack = document.querySelectorAll(".card-back span");
@@ -276,8 +282,7 @@ function updateCardDescriptions(isEnglish) {
             })
         });
     }
-    
-    }
+  }
 
 // Fonction pour afficher la version anglaise
 function showEnglish() {
@@ -360,12 +365,13 @@ function scrollFunction() {
     mybutton.style.display = "none";
   }
 }
-
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 } 
+
+mybutton.addEventListener("click", topFunction)
 
 
 
