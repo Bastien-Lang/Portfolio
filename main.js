@@ -199,20 +199,26 @@ let budget = {
   "url":"budget", 
   "desc":'Projet personnel : site  type "bancaire" de gestion de dépenses',
   "descEN" : 'Personal project: "banking"-style expense management site',
-  "blur" : true
+  "descDetaillee" : 'Personnal project: banking"-style expense management site in collaboration with Maxime Baudet. I did the front-end and I also participated in half of the back-end. Difficulties : It it my most complex back-end project so far ! Languages used: PHP, CSS, MYSQL',
+  "blur" : true,
+  "scale":true
 };
 let weackers = {
   "url":"weackers", 
   "desc":"Projet étudiant en binôme : site de vente de chaussures",
   "descEN":"Student project in pairs: shoe sales website",
-  "blur" : true
+  "descDetaillee" : "Student project: shoe sales website in collaboration with Maxime Delattre. I did all the back-end and participated in the front-end. Difficulties : We didn't have any flexbox class yet... Languages used: PHP, CSS",
+  "blur" : true,
+  "scale":true
 };
 
 let upfest = {
   "url":"upfest", 
   "desc":"Projet étudiant : Création et communication autour d'un festival",
   "descEN":"Student project : Creation and communication around a festival",
-  "blur" : true
+  "descDetaillee" : "Student project: Creation and communication around a festival. I made the whole custom wordpress theme by mylsef. Difficulties : the amount of SVG's I was given was had to make responsive ! Languages used: PHP, CSS, (Wordpress custom theme)",
+  "blur" : true,
+  "scale":true
 };
 
 let mirror = {
@@ -221,7 +227,8 @@ let mirror = {
   "desc":"Projet étudiant : Affiche pour le Musée d'Art Moderne de Paris",
   "descEN":"Student project : Poster for the Musée d'Art Moderne de Paris",
   "descDetaillee" : "Student project: Poster for the Musée d'Art Moderne de Paris. Software used: Photoshop",
-  "scale" : true
+  "scale" : true,
+  "blur":false
 };
 
 let hanzzimmer = {
@@ -230,7 +237,9 @@ let hanzzimmer = {
   "desc":"Projet étudiant : Première de couverture pour Hanz Zimmer",
   "descEN":"Student project : Cover for Hanz Zimmer",
   "descDetaillee" : "Student project: Cover Premiere for Hanz Zimmer. Software used: Photoshop",
-  "scale" : true
+  "scale" : true,
+  "blur" : false,
+
 };
 let saulbass = {
   "url":"Saul_bass", 
@@ -238,7 +247,9 @@ let saulbass = {
   "desc":"Projet étudiant : Affiche / photos dans le style Saul Bass",
   "descEN":"Student project: Poster/ photos in the style of Saul Bass",
   "descDetaillee" : "Student project: Poster/ photos in the style of Saul Bass. Software used : Photoshop, photos taken by ourselves",
-  "scale" : true
+  "scale" : true,
+  "blur" : false,
+
 };
 
 let cardsUrl = [budget, weackers, upfest, mirror, hanzzimmer, saulbass];

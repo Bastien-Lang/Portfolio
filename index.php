@@ -29,9 +29,10 @@
       <nav>
         <div id="left-nav">
           <a href="#home">Home</a>
+          <a href="#about">About</a>
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
-          <a href="#about">About</a>
+
         </div>
         <button class="menu" id="burger" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu">
         <svg width="100" height="100" viewBox="0 0 100 100">
@@ -131,7 +132,7 @@
         <div class="cards-container">
         <span class="subtitles">Websites</span>
         <div class="cards">
-          <a class="card" href="#">
+          <a class="card">
           <div class="background"></div>
             <div class="card-inner">
               <div class="card-front">
@@ -143,7 +144,7 @@
               </div>
             </div>
           </a>
-          <a class="card" href="#">
+          <a class="card">
           <div class="background"></div>
             <div class="card-inner">
               <div class="card-front">
@@ -154,7 +155,7 @@
               </div>
             </div>
           </a>
-          <a class="card" href="#">
+          <a class="card">
           <div class="background"></div>
             <div class="card-inner">
               <div class="card-front">
@@ -248,7 +249,7 @@
         </form>
       </div>
       
-      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+      <button onclick="topFunction()" id="myBtn" title="Go to top"><i class='bx bx-up-arrow-alt'></i></button>
       <script type="module" src="main.js"></script>
 </body>
 </html>
