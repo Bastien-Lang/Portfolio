@@ -24,6 +24,7 @@
 </script>
 </head>
 <body>
+  
     <header id="header">
     <div id="cookie-container"></div>
       <nav>
@@ -49,7 +50,8 @@
         </div>
       </nav>
     </header>
-    
+
+
       <section id="home">
       <?php include("bg-forme.php");?>
 
@@ -208,6 +210,7 @@
               <i class='bx bx-x-circle'></i>
             </button>
             <img src="" alt="">
+            <a href="#"></a>
             <div>
               <h2></h2>
               <span></span>
@@ -249,7 +252,7 @@
         </form>
       </div>
       
-      <button onclick="topFunction()" id="myBtn" title="Go to top"><i class='bx bx-up-arrow-alt'></i></button>
+      <button id="myBtn" title="Go to top"><i class='bx bx-up-arrow-alt'></i></button>
       <script type="module" src="main.js"></script>
 </body>
 </html>

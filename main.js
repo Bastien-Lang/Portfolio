@@ -260,7 +260,7 @@ const overlay = document.querySelector('#overlay')
 const overlayImg = document.querySelector("#overlay img")
 const overlayH2 = document.querySelector('#overlay div h2')
 const overlaySpan = document.querySelector("#overlay div span")
-
+const overlayLink = document.querySelector('#overlay a')
 // Fonction pour mettre à jour les descriptions des cartes en fonction de la langue
 function updateCardDescriptions(isEnglish) {
   for (let i = 0; i < cardsUrl.length; i++) {
@@ -278,12 +278,14 @@ function updateCardDescriptions(isEnglish) {
             overlayImg.src = `${cardsUrl[i].url}.png`
             overlayH2.textContent = cardsUrl[i].titre
             overlaySpan.textContent = cardsUrl[i].descDetaillee
+            overlayLink.href = cardsUrl[i].finalUrl
             overlay.addEventListener("click", function(){
                 overlayImg.src = ""
                 overlayH2.textContent = ""
                 overlaySpan.textContent = ""
                 overlay.classList.add("hide")
                 overlay.classList.remove("show")
+                overlayLink.href = ""
             })
         });
     }
@@ -335,17 +337,32 @@ const burger = document.querySelector('#burger')
 const leftNav = document.querySelector('#left-nav')
 const rightNav = document.querySelector('#right-nav')
 const header = document.querySelector("header")
-burger.addEventListener("click", function(){
+
+function updateNavVisibility() {
+  if (window.innerWidth < 768) {
+    // Ajouter la classe "hide" si elle n'est pas déjà présente
+    if (!leftNav.classList.contains("hide")) {
+      leftNav.classList.add("hide");
+    }
+  } else {
+    // Enlever la classe "hide" si elle est présente
+    if (leftNav.classList.contains("hide")) {
+      leftNav.classList.remove("hide");
+    }
+  }
+}
+
+updateNavVisibility();
+
+burger.addEventListener("click", function () {
   leftNav.classList.toggle("deroulee")
   leftNav.classList.toggle("hide")
   header.style.height = "auto"
 })
 
+window.addEventListener("resize", updateNavVisibility)
 
-// Get the button
 let mybutton = document.getElementById("myBtn");
-console.log(window.onscroll)
-// When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
@@ -356,15 +373,18 @@ function scrollFunction() {
   }
 }
 
-// When the user clicks on the button, scroll to the top of the document
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0
 }
+
+mybutton.addEventListener("click", topFunction)
+
 
 
 // Initialisation
 // Initialisation par défaut des cartes en français
 updateCardDescriptions(true);
 changeCookie()
+
 
