@@ -210,10 +210,10 @@
               <i class='bx bx-x-circle'></i>
             </button>
             <img src="" alt="">
-            <a href="#"></a>
+            <a href="#">Visit Website <i class='bx bx-link-external'></i></a>
             <div>
               <h2></h2>
-              <span></span>
+              <p></p>
             </div>
         </div>
       </section>

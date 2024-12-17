@@ -197,28 +197,34 @@ let frenchFlags = document.querySelectorAll(".french-flag");
 
 let budget = {
   "url":"budget", 
+  "titre" :"Budget App",
   "desc":'Projet personnel : site  type "bancaire" de gestion de dépenses',
   "descEN" : 'Personal project: "banking"-style expense management site',
-  "descDetaillee" : 'Personnal project: banking"-style expense management site in collaboration with Maxime Baudet. I did the front-end and I also participated in half of the back-end. Difficulties : It it my most complex back-end project so far ! Languages used: PHP, CSS, MYSQL',
+  "descDetaillee" : 'Personnal project: banking"-style expense management site in collaboration with Maxime Baudet. I did the front-end and I also participated in half of the back-end. <br>Difficulties : It it my most complex back-end project so far ! <br>Languages used: PHP, CSS, MYSQL',
   "blur" : true,
-  "scale":true
+  "scale":true,
+  "finalUrl":"#",
 };
 let weackers = {
   "url":"weackers", 
+  "titre" :"Weackers",
   "desc":"Projet étudiant en binôme : site de vente de chaussures",
   "descEN":"Student project in pairs: shoe sales website",
-  "descDetaillee" : "Student project: shoe sales website in collaboration with Maxime Delattre. I did all the back-end and participated in the front-end. Difficulties : We didn't have any flexbox class yet... Languages used: PHP, CSS",
+  "descDetaillee" : "Student project: shoe sales website in collaboration with Maxime Delattre. I did all the back-end and participated in the front-end. <br>Difficulties : We didn't have any flexbox class yet... <br>Languages used: PHP, CSS",
   "blur" : true,
-  "scale":true
+  "scale":true,
+  "finalUrl":"#",
 };
 
 let upfest = {
   "url":"upfest", 
+  "titre" :"UPFEST",
   "desc":"Projet étudiant : Création et communication autour d'un festival",
   "descEN":"Student project : Creation and communication around a festival",
-  "descDetaillee" : "Student project: Creation and communication around a festival. I made the whole custom wordpress theme by mylsef. Difficulties : the amount of SVG's I was given was had to make responsive ! Languages used: PHP, CSS, (Wordpress custom theme)",
+  "descDetaillee" : "Student project: Creation and communication around a festival. I made the whole custom wordpress theme by mylsef. <br>Difficulties : the amount of SVG's I was given was had to make responsive ! <br>Languages used: PHP, CSS, (Wordpress custom theme)",
   "blur" : true,
-  "scale":true
+  "scale":true,
+  "finalUrl":"#",
 };
 
 let mirror = {
@@ -226,9 +232,10 @@ let mirror = {
   "titre" :"Mirror",
   "desc":"Projet étudiant : Affiche pour le Musée d'Art Moderne de Paris",
   "descEN":"Student project : Poster for the Musée d'Art Moderne de Paris",
-  "descDetaillee" : "Student project: Poster for the Musée d'Art Moderne de Paris. Software used: Photoshop",
+  "descDetaillee" : "Student project: Poster for the Musée d'Art Moderne de Paris. <br>Software used: Photoshop",
   "scale" : true,
-  "blur":false
+  "blur":false,
+  "finalUrl":false,
 };
 
 let hanzzimmer = {
@@ -236,20 +243,20 @@ let hanzzimmer = {
   "titre" :"Hanz Zimmer",
   "desc":"Projet étudiant : Première de couverture pour Hanz Zimmer",
   "descEN":"Student project : Cover for Hanz Zimmer",
-  "descDetaillee" : "Student project: Cover Premiere for Hanz Zimmer. Software used: Photoshop",
+  "descDetaillee" : "Student project: Cover Premiere for Hanz Zimmer. <br>Software used: Photoshop",
   "scale" : true,
   "blur" : false,
-
+  "finalUrl":false,
 };
 let saulbass = {
   "url":"Saul_bass", 
   "titre" :"Mystère à l'iut",
   "desc":"Projet étudiant : Affiche / photos dans le style Saul Bass",
   "descEN":"Student project: Poster/ photos in the style of Saul Bass",
-  "descDetaillee" : "Student project: Poster/ photos in the style of Saul Bass. Software used : Photoshop, photos taken by ourselves",
+  "descDetaillee" : "Student project: Poster/ photos in the style of Saul Bass. <br>Software used : Photoshop, <br>photos taken by ourselves",
   "scale" : true,
   "blur" : false,
-
+  "finalUrl":false,
 };
 
 let cardsUrl = [budget, weackers, upfest, mirror, hanzzimmer, saulbass];
@@ -259,7 +266,7 @@ let cardsBack = document.querySelectorAll(".card-back span");
 const overlay = document.querySelector('#overlay')
 const overlayImg = document.querySelector("#overlay img")
 const overlayH2 = document.querySelector('#overlay div h2')
-const overlaySpan = document.querySelector("#overlay div span")
+const overlaySpan = document.querySelector("#overlay div p")
 const overlayLink = document.querySelector('#overlay a')
 // Fonction pour mettre à jour les descriptions des cartes en fonction de la langue
 function updateCardDescriptions(isEnglish) {
@@ -277,8 +284,13 @@ function updateCardDescriptions(isEnglish) {
             overlay.classList.remove("hide")
             overlayImg.src = `${cardsUrl[i].url}.png`
             overlayH2.textContent = cardsUrl[i].titre
-            overlaySpan.textContent = cardsUrl[i].descDetaillee
-            overlayLink.href = cardsUrl[i].finalUrl
+            overlaySpan.innerHTML = cardsUrl[i].descDetaillee
+            if(cardsUrl[i].finalUrl != false){
+              overlayLink.href = cardsUrl[i].finalUrl
+              overlayLink.style.display = "block"
+            }else{
+              overlayLink.style.display = "none"
+            }
             overlay.addEventListener("click", function(){
                 overlayImg.src = ""
                 overlayH2.textContent = ""

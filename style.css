@@ -25,7 +25,19 @@ html, body {
   display: flex;
   flex-direction: column;
 }
-
+#overlay>a{
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  top: 50%;
+  color: #FDF7F0;
+  background-color: #695853;
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  text-decoration:none ;
+  font-size: 30px;
+  font-weight: 500;
+}
 #overlay button>i{
   background: none;
   border: none;
@@ -61,15 +73,18 @@ html, body {
   top: 50%;
   transform:translate(-50%,-50%)
 }
-
+#overlay>div>p{
+  max-width: 85%;
+}
 #overlay>div{
   width: 100%;
-  text-align: center;
+  text-align: left;
   z-index: 1000;
   background-color: #695853;
   color: #FDF7F0;
   position: absolute;
   bottom: 0;
+  padding-left: 10%;
 }
 /* Par défaut, le scroll est fluide et libre */
 
@@ -263,6 +278,7 @@ header>nav a, header>nav button{
 
 #cookie-text{
   font-size: 32px;
+  color: #263547  ;
 }
 
 #cookie-plural, #cookie-count span b{
@@ -717,7 +733,16 @@ textarea::-webkit-scrollbar {
 
 
 @media screen and (max-width:768px) {
-
+  #overlay>div{
+    text-align: left;
+    padding: 0 10px;
+  }
+  #overlay>div>p{
+    max-width: 95%;
+  }
+  #overlay>a{
+    font-size: 20px;
+  }
   #about>div>a{
     margin-top: 1rem;
     align-self: center;
@@ -958,7 +983,9 @@ textarea::-webkit-scrollbar {
   }
 }
 @media screen and (max-width:430px) {
-
+  #overlay>a{
+    font-size: 14px;
+  }
   #contact > div > span, #about .title{
     font-size: 50px;
     align-self: flex-start;
