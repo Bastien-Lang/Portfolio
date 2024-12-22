@@ -24,7 +24,12 @@
 </script>
 </head>
 <body>
-  
+  <div id="loading-screen">
+    <div class="cookieRoule"></div>
+  </div>
+  <div id="main-content">
+  <?php include("bg-forme.php");?>
+
     <header id="header">
     <div id="cookie-container"></div>
       <nav>
@@ -53,8 +58,6 @@
 
 
       <section id="home">
-      <?php include("bg-forme.php");?>
-
         <div id="title-text" class="title">
           <div>
             <span id="typed"></span>
@@ -253,6 +256,7 @@
       </div>
       
       <button id="myBtn" title="Go to top"><i class='bx bx-up-arrow-alt'></i></button>
+  </div>
       <script type="module" src="main.js"></script>
 </body>
 </html>

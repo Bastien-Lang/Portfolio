@@ -4,7 +4,49 @@ html, body {
   background-color: #FDF7F0;
   font-family: 'Poppins';
 }
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #F7DDBF; /* Background color for the loading screen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  transition: all 1s;
+}
 
+#main-content {
+  opacity: 0; /* Start invisible */
+  transition: opacity 0.5s ease-in; /* Smooth fade-in effect */
+}
+.cookieRoule {
+  width: 100vh; /* Taille du cercle */
+  height: 100vh;
+  background-position: 50%;
+  background-image: url('cookie\ 2.svg'); /* Marron, couleur de cookie */
+  border-radius: 50%; /* Cercle parfait */
+  position: absolute; /* Absolu pour animation */
+  top: 50%; /* Centre vertical */
+  transform: translateY(-50%);
+  background-repeat: no-repeat;
+  z-index: 99999;
+  
+  /* Animation */
+  animation: roll-cookie 2.4s linear infinite;
+}
+
+/* Animation pour rouler et traverser l'écran */
+@keyframes roll-cookie {
+  0% {
+    transform: translate(-100vw, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(100vw, -50%) rotate(360deg);
+  }
+}
 .hide{
   display: none !important;
 }
@@ -12,6 +54,8 @@ html, body {
 .show{
   display: block !important;
 }
+
+
 #overlay {
   position: fixed;
   top: 0;

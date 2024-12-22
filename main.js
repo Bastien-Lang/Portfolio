@@ -392,6 +392,25 @@ function topFunction() {
 
 mybutton.addEventListener("click", topFunction)
 
+document.addEventListener("DOMContentLoaded", () => {
+  const loadingScreen = document.getElementById("loading-screen");
+  const mainContent = document.getElementById("main-content");
+  const animationDuration = 2000; // Durée de l'animation en millisecondes
+
+  // Démarre une fois que la page a chargé complètement
+  window.addEventListener("load", () => {
+    const animationStart = performance.now();
+
+    // Calculer le temps restant si le chargement a pris moins de temps que l'animation
+    const remainingTime = Math.max(animationDuration - (performance.now() - animationStart), 0);
+
+    setTimeout(() => {
+      // Cacher l'écran de chargement et afficher le contenu
+      loadingScreen.style.display = "none"; // Cache l'écran de chargement
+      mainContent.style.opacity = "1"; // Fait apparaître le contenu principal
+    }, remainingTime);
+  });
+});
 
 
 // Initialisation
