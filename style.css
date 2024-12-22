@@ -1,8 +1,9 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: #FDF7F0;
+  background-color: #000000;
   font-family: 'Poppins';
+  
 }
 #loading-screen {
   position: fixed;
