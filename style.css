@@ -1,7 +1,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: #6b4111;
+  background-color: #F7DDBF;
   font-family: 'Poppins';
   
 }
@@ -10,7 +10,7 @@ html, body {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   background-color: #F7DDBF; /* Background color for the loading screen */
   display: flex;
   justify-content: center;
@@ -24,8 +24,8 @@ html, body {
   transition: opacity 0.5s ease-in; /* Smooth fade-in effect */
 }
 .cookieRoule {
-  width: 100vh; /* Taille du cercle */
-  height: 100vh;
+  width: 100dvh; /* Taille du cercle */
+  height: 100dvh;
   background-position: 50%;
   background-image: url('cookie\ 2.svg'); /* Marron, couleur de cookie */
   border-radius: 50%; /* Cercle parfait */
@@ -152,7 +152,7 @@ html, body {
 
 section {
   /*scroll-snap-align: start; /* Chaque section s'alignera au début */
-  height: 100vh; /* Chaque section fait 100% de la hauteur de la vue */
+  height: 100dvh; /* Chaque section fait 100% de la hauteur de la vue */
 }
 #burger{
   display: none;
@@ -162,7 +162,7 @@ section {
 #bg-forme{
   position: fixed;
   z-index: -1;
-  height: 100vh;
+  height: 100dvh;
 }
 
 #cookie-container {
@@ -265,7 +265,7 @@ header>nav a, header>nav button{
   display: flex;
   justify-content: space-between;
   align-items: center; 
-  height: 100vh;
+  height: 100dvh;
   position: relative; /* Nécessaire pour le positionnement absolu */
 }
 
@@ -408,7 +408,7 @@ header>nav a, header>nav button{
 
 /*projects*/
 #projects {
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -514,7 +514,7 @@ header>nav a, header>nav button{
 
 /*contact*/
 #contact{
-  height: 70vh;
+  height: 70dvh;
   position: relative;
   display: flex;
   justify-content: center;
@@ -576,7 +576,7 @@ header>nav a, header>nav button{
 }
 #closeForm{
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   background-color: rgba(255, 255, 255, 0.4);
   position: fixed;
   z-index: 0;
@@ -721,7 +721,7 @@ textarea::-webkit-scrollbar {
 	margin-left: 15%;
   margin-right: 15%;
   justify-content: space-between;
-  height: 100vh;
+  height: 100dvh;
   align-items: center;
 }
 
@@ -802,7 +802,7 @@ textarea::-webkit-scrollbar {
   }
 
   #contact{
-    height: 60vh;
+    height: 60dvh;
   }
 
   #contact > div{
