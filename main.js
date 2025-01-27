@@ -203,7 +203,7 @@ let budget = {
   "descDetaillee" : 'Personnal project: banking"-style expense management site in collaboration with Maxime Baudet. I did the front-end and I also participated in half of the back-end. <br>Difficulties : It it my most complex back-end project so far ! <br>Languages used: PHP, CSS, MYSQL',
   "blur" : true,
   "scale":true,
-  "finalUrl":"#",
+  "finalUrl":false,
 };
 let weackers = {
   "url":"weackers", 
@@ -213,7 +213,7 @@ let weackers = {
   "descDetaillee" : "Student project: shoe sales website in collaboration with Maxime Delattre. I did all the back-end and participated in the front-end. <br>Difficulties : We didn't have any flexbox class yet... <br>Languages used: PHP, CSS",
   "blur" : true,
   "scale":true,
-  "finalUrl":"#",
+  "finalUrl":false,
 };
 
 let upfest = {
@@ -224,7 +224,7 @@ let upfest = {
   "descDetaillee" : "Student project: Creation and communication around a festival. I made the whole custom wordpress theme by mylsef. <br>Difficulties : the amount of SVG's I was given was had to make responsive ! <br>Languages used: PHP, CSS, (Wordpress custom theme)",
   "blur" : true,
   "scale":true,
-  "finalUrl":"#",
+  "finalUrl":false,
 };
 
 let mirror = {
