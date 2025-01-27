@@ -118,7 +118,7 @@
           </div>
 
           <?php include('skills-icons.php');?>
-          <a href="CV-Bastien-Lang.pdf" download="Bastien_Lang_CV">
+          <a href="CV-Bastien-LANG.pdf" download="Bastien_Lang_CV">
               <button aria-label="Download my CV"><b>My CV</b></button>
           </a>
         </div>
