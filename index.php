@@ -51,7 +51,7 @@
         </svg>
       </button>
         <div id="right-nav">
-          <a href="CV-Bastien-Lang.pdf" download="Bastien_Lang_CV">
+          <a href="CV-Bastien-LANG.pdf" download="Bastien_Lang_CV.pdf">
             <button id="mycv" aria-label="Download my CV"><b>My CV</b></button>
             <?php include("svg.php");?>
           </a>
