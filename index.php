@@ -123,7 +123,7 @@
           </a>
         </div>
         <?php include("portrait.php");?>
-
+<div></div>
 
       </section>
       
