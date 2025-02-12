@@ -166,6 +166,17 @@
           <div class="background"></div>
             <div class="card-inner">
               <div class="card-front">
+                <span>Traveller</span>
+              </div>
+              <div class="card-back">
+                <span>Voir Détails</span>
+              </div>
+            </div>
+          </a>
+          <a class="card">
+          <div class="background"></div>
+            <div class="card-inner">
+              <div class="card-front">
                 <span>UPFEST</span>
               </div>
               <div class="card-back">

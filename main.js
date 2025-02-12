@@ -216,6 +216,17 @@ let weackers = {
   "finalUrl":false,
 };
 
+let traveller = {
+  "url":"traveller_login", 
+  "titre" :"Traveller",
+  "desc":"Projet étudiant : Marathon du web, site de voyage à faire en 48h non stop",
+  "descEN":"Student project : Web marathon, travel site to be done in 48h non-stop",
+  "descDetaillee" : "Student project: Web marathon, travel site to be done in 48h non-stop. I did the most of the front-end and designs. <br>Difficulties : The time limit ! <br>Languages used: PHP (laravel), CSS, JS",
+  "scale" : true,
+  "blur":true,
+  "finalUrl":false,
+};
+
 let upfest = {
   "url":"upfest", 
   "titre" :"UPFEST",
@@ -238,6 +249,7 @@ let mirror = {
   "finalUrl":false,
 };
 
+
 let hanzzimmer = {
   "url":"hanzzimmer", 
   "titre" :"Hanz Zimmer",
@@ -259,7 +271,7 @@ let saulbass = {
   "finalUrl":false,
 };
 
-let cardsUrl = [budget, weackers, upfest, mirror, hanzzimmer, saulbass];
+let cardsUrl = [budget, weackers,traveller, upfest, mirror, hanzzimmer, saulbass];
 let cards = document.querySelectorAll(".background");
 let card = document.querySelectorAll(".card");
 let cardsBack = document.querySelectorAll(".card-back span");
