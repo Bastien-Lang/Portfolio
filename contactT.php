@@ -27,6 +27,6 @@ if (isset($_POST['submit'])) {
 }
 
 // Redirection vers la page d'accueil
-header("Location: index.php");
+header("Location: /index.php");
 exit();
 ?>
