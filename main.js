@@ -1,5 +1,4 @@
-
-  // const shape = document.querySelector('.animated-shape');
+// const shape = document.querySelector('.animated-shape');
 
   // document.addEventListener('mousemove', (e) => {
   //   const mouseX = e.clientX / window.innerWidth;
@@ -225,6 +224,7 @@ let traveller = {
   "scale" : true,
   "blur":true,
   "finalUrl":false,
+  "multiImg": ["traveller.gif", "traveller_login"]
 };
 
 let upfest = {
@@ -294,23 +294,44 @@ function updateCardDescriptions(isEnglish) {
           console.log(cards[i])
             overlay.classList.add("show")
             overlay.classList.remove("hide")
-            overlayImg.src = `${cardsUrl[i].url}.png`
-            overlayH2.textContent = cardsUrl[i].titre
-            overlaySpan.innerHTML = cardsUrl[i].descDetaillee
-            if(cardsUrl[i].finalUrl != false){
-              overlayLink.href = cardsUrl[i].finalUrl
-              overlayLink.style.display = "block"
-            }else{
-              overlayLink.style.display = "none"
+            if (cardsUrl[i].multiImg) {
+              let divMultiImg = document.createElement('div');
+              divMultiImg.classList.add("multiImg");
+              cardsUrl[i].multiImg.forEach(imgUrl => {
+                let imgElement = document.createElement('img');
+                let extension = imgUrl.includes('.') ? '' : '.png';
+                imgElement.src = `${imgUrl}${extension}`;
+                divMultiImg.appendChild(imgElement);
+                imgElement.classList.add("multiImg");
+              });
+              overlay.appendChild(divMultiImg);
+            } else {
+              let extension = cardsUrl[i].url.includes('.') ? '' : '.png';
+              overlayImg.src = `${cardsUrl[i].url}${extension}`;
             }
-            overlay.addEventListener("click", function(){
-                overlayImg.src = ""
-                overlayH2.textContent = ""
-                overlaySpan.textContent = ""
-                overlay.classList.add("hide")
-                overlay.classList.remove("show")
-                overlayLink.href = ""
-            })
+            overlayImg.classList.add("multiImgUnique");
+            overlayH2.textContent = cardsUrl[i].titre;
+            overlaySpan.innerHTML = cardsUrl[i].descDetaillee;
+            if (cardsUrl[i].finalUrl != false) {
+              overlayLink.href = cardsUrl[i].finalUrl;
+              overlayLink.style.display = "block";
+            } else {
+              overlayLink.style.display = "none";
+            }
+            overlay.addEventListener("click", function() {
+              overlayImg.src = "";
+              overlayH2.textContent = "";
+              overlaySpan.textContent = "";
+              overlay.classList.add("hide");
+              overlay.classList.remove("show");
+              overlayLink.href = "";
+              
+              // Supprimer les éléments de la classe multiImg et leurs enfants
+              let multiImgElements = document.querySelectorAll('.multiImg');
+              multiImgElements.forEach(element => {
+                element.remove();
+              });
+            });
         });
     }
   }

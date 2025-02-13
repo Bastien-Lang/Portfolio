@@ -227,7 +227,7 @@
             </button>
             <img src="" alt="">
             <a href="#">Visit Website <i class='bx bx-link-external'></i></a>
-            <div>
+            <div class="description">
               <h2></h2>
               <p></p>
             </div>

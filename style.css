@@ -113,20 +113,36 @@ html, body {
   right: 5%;
 
 }
-#overlay img {
+.multiImgUnique {
   max-width: 90%;
   max-height: 65%;
   border-radius: 5px;
   box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 40%;
   transform:translate(-50%,-50%)
 }
 #overlay>div>p{
   max-width: 85%;
 }
-#overlay>div{
+.multiImg{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, max-content));
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  gap: 5%;
+  margin: 0 5%;
+}
+.multiImg img{
+  height: auto;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+  margin: 0;
+}
+.description{
   width: 100%;
   text-align: left;
   z-index: 1000;
@@ -774,7 +790,7 @@ textarea::-webkit-scrollbar {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-#overlay div{
+.description{
   padding-bottom: 2rem;
 }
 .showFlag{
@@ -782,6 +798,15 @@ textarea::-webkit-scrollbar {
 
 
 @media screen and (max-width:768px) {
+  .multiImg{
+    grid-template-columns: auto;
+    margin-top: 50%;
+    height: 50%;
+  }
+
+  .multiImg img{
+    max-width: 100%;
+  }
   #overlay>div{
     text-align: left;
     padding: 0 10px;
