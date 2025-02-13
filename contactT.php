@@ -25,5 +25,8 @@ if (isset($_POST['submit'])) {
 } else {
     echo "Le formulaire n'a pas été envoyé.";
 }
-header("Location :index.php");
+
+// Redirection vers la page d'accueil
+header("Location: index.php");
+exit();
 ?>
