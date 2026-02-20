@@ -315,30 +315,34 @@
       </section>  
       <div id="closeForm" class="hidden"></div>
       <div id="contact-form" class="hidden">
-        <form action="contactT.php" method="post">
-          <button aria-label="Fermer le formulaire" id="close">
-            <i class='bx bx-x-circle'></i>
-          </button>
-          <div id="names" class="allFields">
-            <div id="lastName">
-              <label for="lastName">Last name</label>
-              <input type="text" required name="lastName">
-            </div>
-            <div id="firstName">
-              <label for="firstName">First name</label>
-              <input type="text" required name="firstName">
-            </div>
-          </div>
-          <div class="fields allFields">
-            <label for="email">E-mail</label>
-            <input type="email" required name="email">
-          </div>
-          <div class="fields allFields">
-            <label for="message">Message (french or english)</label>
-              <textarea name="message" id="message" required maxlength="500"></textarea>
-          </div>
-          <input type="submit" name="submit" value="Submit" id="submit">
-        </form>
+        <form action="https://formspree.io/f/xvzbbbww" method="POST">
+  <button type="button" aria-label="Fermer le formulaire" id="close">
+    <i class='bx bx-x-circle'></i>
+  </button>
+  
+  <div id="names" class="allFields">
+    <div id="lastName">
+      <label>Last name</label>
+      <input type="text" required name="lastName">
+    </div>
+    <div id="firstName">
+      <label>First name</label>
+      <input type="text" required name="firstName">
+    </div>
+  </div>
+
+  <div class="fields allFields">
+    <label>E-mail</label>
+    <input type="email" required name="email">
+  </div>
+
+  <div class="fields allFields">
+    <label>Message (french or english)</label>
+    <textarea name="message" id="message" required maxlength="500"></textarea>
+  </div>
+
+  <input type="submit" value="Submit" id="submit">
+</form>
       </div>
       
       <button id="myBtn" title="Go to top"><i class='bx bx-up-arrow-alt'></i></button>
