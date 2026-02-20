@@ -194,6 +194,39 @@ let french = document.getElementById("french");
 let englishFlags = document.querySelectorAll(".english-flag");
 let frenchFlags = document.querySelectorAll(".french-flag");
 
+let collab = {
+  "url":"collab", 
+  "titre" :"Corolle X Le routard",
+  "desc":'Projet étudiant en groupe : Collaboration fictive entre une marque et un magazine de voyage',
+  "descEN" : 'Student group project: fake collaboration between a brand and a travel magazine',
+  "descDetaillee" : 'Student group project: fake collaboration between a brand and a travel magazine. Used R3F for 3D rendering of the doll <br>Difficulties : Using React Three Fiber to make the doll in 3D :( <br>Tech used: Nextjs, CSS, Framer Motion, React Three Fiber',
+  "blur" : true,
+  "scale":true,
+  "finalUrl":false,
+  "multiImg": ["collab", "doll"]
+}
+let escape = {
+  "url":"escape", 
+  "titre" :"Escape Game",
+  "desc":'Projet étudiant en groupe : Escape Game en ligne',
+  "descEN" : 'Student group project: online escape game',
+  "descDetaillee" : 'Student group project: online escape game. <br>Difficulties : The number of assets made it almost impossible to make reponsive :( <br>Tech used: Nextjs, CSS, GSAP',
+  "blur" : true,
+  "scale":true,
+  "finalUrl":false,
+}
+
+let lumina = {
+  "url":"lumina", 
+  "titre" :"Lumina",
+  "desc":'Projet étudiant en groupe : Agence web fictive de création de sites internet',
+  "descEN" : 'Student group project: fictional web agency creating websites',
+  "descDetaillee" : 'Student group project: fictional web agency creating websites.I used ThreeJS for the cube, camera movements and lighting. <br>Difficulties : First time using ThreeJS <br>Tech used: Nextjs, CSS, ThreeJS, Framer Motion',
+  "blur" : true,
+  "scale":true,
+  "finalUrl":false,
+}
+
 let budget = {
   "url":"budget", 
   "titre" :"Budget App",
