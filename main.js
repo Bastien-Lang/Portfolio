@@ -205,7 +205,7 @@ let collab = {
   "finalUrl":false,
   "multiImg": ["collab", "doll"]
 }
-let escape = {
+let escaped = {
   "url":"escape", 
   "titre" :"Escape Game",
   "desc":'Projet étudiant en groupe : Escape Game en ligne',
@@ -304,7 +304,7 @@ let saulbass = {
   "finalUrl":false,
 };
 
-let cardsUrl = [budget, weackers,traveller, upfest, mirror, hanzzimmer, saulbass];
+let cardsUrl = [lumina, collab, escaped, budget, weackers,traveller, upfest, mirror, hanzzimmer, saulbass];
 let cards = document.querySelectorAll(".background");
 let card = document.querySelectorAll(".card");
 let cardsBack = document.querySelectorAll(".card-back span");
