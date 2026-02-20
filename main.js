@@ -313,7 +313,7 @@ let terre = {
   "scale" : true,
   "blur":false,
   "finalUrl":false,
-  "multiImg": ["terre1", "terre2"]
+  "multiImg": ["terre", "terre2"]
 }
 
 let cardsUrl = [lumina, collab, escaped, budget, weackers,traveller, upfest,terre, mirror, hanzzimmer, saulbass];
