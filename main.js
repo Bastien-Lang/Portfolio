@@ -304,7 +304,19 @@ let saulbass = {
   "finalUrl":false,
 };
 
-let cardsUrl = [lumina, collab, escaped, budget, weackers,traveller, upfest, mirror, hanzzimmer, saulbass];
+let terre = {
+  "url":"terre", 
+  "titre" :"Terre-Éclat",
+  "desc":"Projet étudiant : WebDesign pour une fausse marque de Céramique de luxe",
+  "descEN":"Student project: WebDesign for a fake luxury ceramic brand",
+  "descDetaillee" : "Student project: WebDesign for a fake luxury ceramic brand. <br>Software used : Figma",
+  "scale" : true,
+  "blur":false,
+  "finalUrl":false,
+  "multiImg": ["terre1", "terre2"]
+}
+
+let cardsUrl = [lumina, collab, escaped, budget, weackers,traveller, upfest,terre, mirror, hanzzimmer, saulbass];
 let cards = document.querySelectorAll(".background");
 let card = document.querySelectorAll(".card");
 let cardsBack = document.querySelectorAll(".card-back span");
